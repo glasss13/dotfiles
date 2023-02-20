@@ -1,0 +1,19 @@
+[color]
+    ui = true
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+[user]
+    name = Max Glass
+    email = glassmax13@gmail.com
+[credential]
+    helper = cache
+[init]
+    defaultbranch = master
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%D%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
