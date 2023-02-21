@@ -12,6 +12,7 @@ function finder
 	open -a finder $argv
 end
 
+alias exa "exa -lahb"
 alias vim nvim
 # setup dotfiles repository
 alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
