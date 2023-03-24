@@ -12,12 +12,28 @@ function finder
 	open -a finder $argv
 end
 
+function list_java
+    echo (/usr/libexec/java_home -V)
+end
+function java19
+    export JAVA_HOME=(/usr/libexec/java_home -v19 -F)
+end
+function java8
+    export JAVA_HOME=(/usr/libexec/java_home -v1.8 -F)
+end
+# Set default java version to 19
+java19
+
 alias exa "exa -lahb"
+alias cat bat
 alias vim nvim
-# setup dotfiles repository
+alias la "echo use exa"
+alias ls "echo use exa"
+
 alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 config config --local status.showUntrackedFiles no
 
+rtx activate fish | source
 starship init fish | source
 if status is-interactive
     # Commands to run in interactive sessions can go here
