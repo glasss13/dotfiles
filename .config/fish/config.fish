@@ -2,8 +2,6 @@ fish_add_path /usr/local/bin
 fish_add_path ~/.cargo/bin
 fish_add_path ~/bin
 
-set --universal nvm_default_version lts
-
 function fish_greeting
 	echo -e "Hello Max, you are looking rather handsome today"
 end
@@ -15,14 +13,14 @@ end
 function list_java
     echo (/usr/libexec/java_home -V)
 end
-function java19
-    export JAVA_HOME=(/usr/libexec/java_home -v19 -F)
+function java20
+    export JAVA_HOME=(/usr/libexec/java_home -v20 -F)
 end
 function java8
     export JAVA_HOME=(/usr/libexec/java_home -v1.8 -F)
 end
-# Set default java version to 19
-java19
+# Set default java version to 20
+java20
 
 alias exa "exa -lahb"
 alias cat bat
