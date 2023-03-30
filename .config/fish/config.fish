@@ -1,5 +1,6 @@
 fish_add_path /usr/local/bin
 fish_add_path ~/.config/cargo/bin
+fish_add_path ~/.local/share/cargo/bin
 fish_add_path ~/bin
 
 # Set xdg spec environment variables
