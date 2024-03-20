@@ -14,21 +14,23 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensured_installed = {
+            ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
                 "clangd",
+                "gopls",
             },
+            automatic_installation = true,
             handlers = {
-                function (server_name)
+                function(server_name)
                     require("lspconfig")[server_name].setup {}
                 end
             }
         })
 
         local cmp = require("cmp")
-        local cmp_select = {behavior = cmp.SelectBehavior.Select}
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -40,6 +42,7 @@ return {
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-space>'] = cmp.mapping.complete(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
