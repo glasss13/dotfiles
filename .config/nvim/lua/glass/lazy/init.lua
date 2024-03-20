@@ -5,6 +5,10 @@ return {
             vim.cmd("colorscheme onedark")
         end
     },
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    },
     "nvim-lua/plenary.nvim",
     "markovejnovic/vim-dssl2",
     "tpope/vim-sleuth",
