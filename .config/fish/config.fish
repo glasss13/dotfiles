@@ -3,8 +3,14 @@ fish_add_path ~/.local/share/cargo/bin
 fish_add_path ~/.local/share/npm/bin
 fish_add_path ~/bin
 fish_add_path /usr/local/texlive/2023/bin/universal-darwin
+fish_add_path /Applications/Racket/bin
 
 pyenv init - | source
+
+# opam configuration
+source /Users/glass/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+starship init fish | source
 
 # Set xdg spec environment variables
 set -x XDG_DATA_HOME $HOME/.local/share
@@ -46,18 +52,16 @@ end
 java21
 
 # alias exa "exa -lahb"
-alias la "exa -lab --icons --git"
+#alias la "exa -lab --icons --git"
 alias cat bat
 alias vim nvim
-alias ls "echo use exa"
+#alias ls "echo use exa"
+alias ls "eza -lab --icons --git"
 
 alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 config config --local status.showUntrackedFiles no
 
-starship init fish | source
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# opam configuration
-source /Users/glass/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
