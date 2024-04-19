@@ -16,4 +16,6 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
-
+-- keep text highlighted whenn {in, de}denting visual block
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
