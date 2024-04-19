@@ -25,6 +25,7 @@ set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 set -x NODE_REPL_HISTORY $XDG_DATA_HOME/node_repl_history
 
 set -x PYTHONSTARTUP $XDG_CONFIG_HOME/python/pythonrc
+set -x WAKATIME_HOME = $XDG_CONFIG_HOME/wakatime
 
 set -x DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 set -x GRADLE_USER_HOME $XDG_DATA_HOME/gradle
@@ -42,14 +43,14 @@ end
 function list_java
     echo (/usr/libexec/java_home -V)
 end
-function java21
-    set -x JAVA_HOME (/usr/libexec/java_home -v21 -F)
+function java22
+    set -x JAVA_HOME (/usr/libexec/java_home -v22 -F)
 end
 function java8
     set -x JAVA_HOME (/usr/libexec/java_home -v1.8 -F)
 end
-# Set default java version to 21
-java21
+# Set default java version to 22
+java22
 
 # alias exa "exa -lahb"
 #alias la "exa -lab --icons --git"
