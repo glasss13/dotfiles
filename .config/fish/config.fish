@@ -10,8 +10,6 @@ pyenv init - | source
 # opam configuration
 source /Users/glass/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
-starship init fish | source
-
 # Set xdg spec environment variables
 set -x XDG_DATA_HOME $HOME/.local/share
 set -x XDG_STATE_HOME $HOME/.local/state
@@ -30,11 +28,6 @@ set -x WAKATIME_HOME = $XDG_CONFIG_HOME/wakatime
 set -x DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 set -x GRADLE_USER_HOME $XDG_DATA_HOME/gradle
 set -x LESSHISTFILE $XDG_CACHE_HOME/less/history
-
-
-function fish_greeting
-	echo -e "Hello Max, you are looking rather handsome today"
-end
 
 function finder
 	open -a finder $argv
@@ -63,6 +56,10 @@ alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 config config --local status.showUntrackedFiles no
 
 if status is-interactive
+    starship init fish | source
+    function fish_greeting
+	echo -e "Hello Max, you are looking rather handsome today"
+    end
     # Commands to run in interactive sessions can go here
 end
 
