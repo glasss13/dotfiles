@@ -10,7 +10,6 @@ return {
         lazy = false,
     },
     "nvim-lua/plenary.nvim",
-    "markovejnovic/vim-dssl2",
     "tpope/vim-sleuth",
     {
         'nvim-lualine/lualine.nvim',
