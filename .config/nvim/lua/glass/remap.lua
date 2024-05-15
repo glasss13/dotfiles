@@ -19,3 +19,14 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- keep text highlighted whenn {in, de}denting visual block
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- Toggle hlsearch if it's on, otherwise just do "enter"
+vim.keymap.set("n", "<CR>", function()
+    ---@diagnostic disable-next-line: undefined-field
+    if vim.opt.hlsearch:get() then
+        vim.cmd.nohl()
+        return ""
+    else
+        return "<CR>"
+    end
+end, { expr = true })

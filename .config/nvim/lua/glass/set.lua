@@ -14,7 +14,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -28,3 +28,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+vim.opt.inccommand = "split"
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+
+-- Don't add a comment with "o"
+vim.opt.formatoptions:remove "o"
